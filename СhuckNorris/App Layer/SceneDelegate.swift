@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -13,10 +14,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let scene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: scene)
+        let randomQVC = RandomQuoteViewController()
+        let allQVC = AllQuotesViewController()
+        let categorizedQVC = CategorizedQuotesViewController()
+        
+        randomQVC.tabBarItem = UITabBarItem(title: "Random quote", image: UIImage(systemName: "quote.bubble.fill"), tag: 0)
+        allQVC.tabBarItem = UITabBarItem(title: "All quotes", image: UIImage(systemName: "note.text"), tag: 1)
+        categorizedQVC.tabBarItem = UITabBarItem(title: "By category", image: UIImage(systemName: "list.bullet"), tag: 2)
+        
+        let controllers = [randomQVC, allQVC, categorizedQVC]
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = controllers.map {
+            UINavigationController(rootViewController: $0)
+        }
+        tabBarController.selectedIndex = 0
+        tabBarController.tabBar.tintColor = .systemBlue
+        
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
