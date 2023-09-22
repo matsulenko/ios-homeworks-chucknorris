@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC52EECA2ABD5D86006A9660 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BC52EEC92ABD5D86006A9660 /* KeychainSwift */; };
 		BC6365512AABD62700F0FDE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6365502AABD62700F0FDE5 /* AppDelegate.swift */; };
 		BC6365532AABD62700F0FDE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6365522AABD62700F0FDE5 /* SceneDelegate.swift */; };
 		BC6365552AABD62700F0FDE5 /* RandomQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6365542AABD62700F0FDE5 /* RandomQuoteViewController.swift */; };
@@ -44,7 +43,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC52EECA2ABD5D86006A9660 /* KeychainSwift in Frameworks */,
 				BCCC46052AB0F58000935D4C /* RealmSwift in Frameworks */,
 				BCCC46032AB0F58000935D4C /* Realm in Frameworks */,
 			);
@@ -187,7 +185,6 @@
 			packageProductDependencies = (
 				BCCC46022AB0F58000935D4C /* Realm */,
 				BCCC46042AB0F58000935D4C /* RealmSwift */,
-				BC52EEC92ABD5D86006A9660 /* KeychainSwift */,
 			);
 			productName = "СhuckNorris";
 			productReference = BC63654D2AABD62700F0FDE5 /* СhuckNorris.app */;
@@ -219,7 +216,6 @@
 			mainGroup = BC6365442AABD62700F0FDE5;
 			packageReferences = (
 				BCCC46012AB0F58000935D4C /* XCRemoteSwiftPackageReference "realm-swift" */,
-				BC52EEC82ABD5D86006A9660 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = BC63654E2AABD62700F0FDE5 /* Products */;
 			projectDirPath = "";
@@ -465,14 +461,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BC52EEC82ABD5D86006A9660 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 20.0.0;
-			};
-		};
 		BCCC46012AB0F58000935D4C /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
@@ -484,11 +472,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BC52EEC92ABD5D86006A9660 /* KeychainSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BC52EEC82ABD5D86006A9660 /* XCRemoteSwiftPackageReference "keychain-swift" */;
-			productName = KeychainSwift;
-		};
 		BCCC46022AB0F58000935D4C /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BCCC46012AB0F58000935D4C /* XCRemoteSwiftPackageReference "realm-swift" */;

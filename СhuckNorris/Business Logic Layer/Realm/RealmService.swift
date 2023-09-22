@@ -121,8 +121,6 @@ final class RealmService: RealmServiceProtocol {
         }
     }
     
-    //настроить шифрование
-    // внедрить шифрование
     func fetchQuotes() -> Results<QuoteObject> {
         let realm = realmConfiguration()
         let objects = realm.objects(QuoteObject.self).sorted(byKeyPath: "downloadedAt", ascending: false)
