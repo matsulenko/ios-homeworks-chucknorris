@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import RealmSwift
 
 final class CategorizedQuotesViewController: UIViewController {
     
@@ -50,8 +49,7 @@ final class CategorizedQuotesViewController: UIViewController {
     }
     
     private func setupData() {
-        let realm = try! Realm()
-        let objects = realm.objects(QuoteCategory.self).sorted(byKeyPath: "name")
+        let objects = RealmService.shared.fetchCategories()
         data = objects.map { Category(quoteCategory: $0.name).name }
     }
     

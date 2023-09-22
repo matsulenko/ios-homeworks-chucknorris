@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import RealmSwift
 
 final class AllQuotesViewController: UIViewController {
     
@@ -62,8 +61,7 @@ final class AllQuotesViewController: UIViewController {
     
     private func setupData() {
         data = []
-        let realm = try! Realm()
-        let objects = realm.objects(QuoteObject.self).sorted(byKeyPath: "downloadedAt", ascending: false)
+        let objects = RealmService.shared.fetchQuotes()
         
         if category == nil {
             

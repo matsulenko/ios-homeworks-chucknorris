@@ -70,7 +70,7 @@ final class RandomQuoteViewController: UIViewController {
             
             do {
                 let quote = try decoder.decode(Quote.self, from: data)
-                RealmService().saveQuote(quote)
+                RealmService.shared.saveQuote(quote)
                 DispatchQueue.main.async {
                     self.quoteLabel.text = quote.value
                 }                
